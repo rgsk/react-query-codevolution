@@ -1,9 +1,9 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { TSuperHero } from "../types/generalTypes";
 interface IRQSuperHeroesPageProps {}
 const RQSuperHeroesPage: React.FC<IRQSuperHeroesPageProps> = ({}) => {
-  const superheroesQuery = useQuery("superheroes", () =>
+  const superheroesQuery = useQuery(["superheroes"], () =>
     axios.get<TSuperHero[]>("http://localhost:4000/superheroes")
   );
   if (superheroesQuery.isLoading) {

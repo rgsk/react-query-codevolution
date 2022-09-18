@@ -3,7 +3,7 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import RQSuperHeroesPage from "./components/RQSuperHeroesPage";
 import SuperHeroesPage from "./components/SuperHeroesPage";
-import { QueryClientProvider, QueryClient } from "react-query";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 function App() {
   return (
