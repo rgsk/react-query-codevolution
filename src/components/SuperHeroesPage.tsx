@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { TSuperHero } from "../types/generalTypes";
 interface ISuperHeroesPageProps {}
 const SuperHeroesPage: React.FC<ISuperHeroesPageProps> = ({}) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState<
-    { id: number; name: string; alterEgo: string }[]
-  >([]);
+  const [data, setData] = useState<TSuperHero[]>([]);
   useEffect(() => {
     axios.get("http://localhost:4000/superheroes").then((res) => {
       setData(res.data);
